@@ -88,7 +88,7 @@ function start_count(){
         minutes.value--;
     }
     else if (minutes.value == 0 && hour.value != 0) {
-        seconds.value = 58;
+        seconds.value = 59;
         minutes.value = 59;
         hour.value--;
     }
