@@ -1,0 +1,71 @@
+body{
+	background-color: cornsilk;
+}
+
+.container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2rem;
+}
+
+.body{
+	height: 500px;
+	width: 300px;
+	background-color: grey;
+	border-radius: 50px;
+	border: 1px solid black;
+}
+
+.camera-contain{
+	height: 140px;
+	width: 140px;
+	background-color: lightgrey;
+	margin-top: 1rem;
+	margin-left: 1rem;
+	border-radius: 30px;
+	position: relative;
+}
+
+.cam{
+	height: 40px;
+	width: 40px;
+	background-color: #333;
+	border-radius: 50%;
+	margin: 10px;
+}
+
+.cam1{
+	position: absolute;
+	top: 2%;
+}
+
+.cam2{
+	position: absolute;
+	top: 25%;
+	left: 50%;
+}
+
+.cam3{
+	position: absolute;
+	top: 50%;
+}
+
+.flash{
+	height: 12px;
+	width: 8px;
+	border-radius: 50%;
+	background-color: #fff;
+	position: absolute;
+	top: 70%;
+	left: 55%;
+	border: 4px solid black;
+}
+
+.text{
+	margin-top: 13rem;
+	margin-left: 7rem;
+	font-size: 20px;
+	font-weight: bolder;
+	letter-spacing: 1px;
+}

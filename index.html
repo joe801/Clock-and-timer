@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="clk name"><p>Clock</p></div>
+    <div class="stp name"><p>Stopwatch</p></div>
+    <div class="ctd name"><p>Countdown</p></div>
+    <section class="clock">
+        <div class="body">
+            <div id="hour_clock" class="hand" data-hour></div>
+            <div id="minute_clock" class="hand" data-minute></div>
+            <div id="second_clock" class="hand" data-second></div>
+            <p style="--i:1" class="number">1</p>
+            <p style="--i:2" class="number">2</p>
+            <p style="--i:3" class="number">3</p>
+            <p style="--i:4" class="number">4</p>
+            <p style="--i:5" class="number">5</p>
+            <p style="--i:6" class="number">6</p>
+            <p style="--i:7" class="number">7</p>
+            <p style="--i:8" class="number">8</p>
+            <p style="--i:9" class="number">9</p>
+            <p style="--i:10" class="number">10</p>
+            <p style="--i:11" class="number">11</p>
+            <p style="--i:12" class="number">12</p>
+        </div>
+    </section>
+    <section class="stopwatch">
+        <div class="stop_timer">
+            <p id="stop_min">00</p>
+            <p id="sec">00</p>
+            <p id="time">00</p>
+        </div>
+        <div class="stop_btn">
+            <button id="start">start</button>
+            <button id="stop">Stop</button>
+            <button id="reset">Reset</button>
+        </div> 
+    </section>
+    <section class="countdown">
+        <div class="countdown_contain" >
+            <div class="hr">
+                <p>Hours</p>
+                <input type="number" max="99" min="0" id="hour" value="0">
+            </div>
+            <div class="min">
+                <p>Minutes</p>
+                <input type="number" max="60" min="0" id="minutes" value="0">
+            </div>
+            <div class="sec">
+                <p>Seconds</p>
+                <input type="number" max="60" min="0" id="seconds" value="0">
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="play">Start</button>
+            <button id="cancel">Pause</button>
+            <button id="reset_c">Reset</button>
+        </div>
+    </section>
+    
+    <script src="main.js"></script>
+</body>
+</html>

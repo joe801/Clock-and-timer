@@ -1,0 +1,336 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    font-size: 30px;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas: 
+    'one four'
+    'two five'
+    'three six';
+}
+
+div p{
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.name{
+    display: flex;
+    align-items: center;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    border-right: 2px solid white;
+}
+
+.clk{
+    background-color: cornsilk;
+    grid-area: one;
+}
+.stp{
+    background-color: cornflowerblue;
+    grid-area: two;
+    color: aliceblue;
+}
+.ctd{
+    background-color: plum;
+    color: aliceblue;
+    grid-area: three;
+}
+
+/* clock section */
+
+.clock{
+    background-color: cornsilk;
+    grid-area: four;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock .body{
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.clock .body .hand{
+    --r: 330;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    height: 40%;
+    width: 2%;
+    background-color: black;
+    z-index: 10;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(1deg * var(--r)));
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 3px 2px 5px black;
+}
+
+.clock .body::after{
+    content: '';
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: black;
+    box-shadow: 3px 3px 5px black;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+}
+
+#second_clock{
+    width: 0.5%;
+    background-color: red;
+    z-index: 13;
+}
+
+#minute_clock{
+    width: 1%;
+    height: 30%;
+    z-index: 12;
+}
+
+#hour_clock{
+    height: 25%;
+}
+
+.clock .body .number{
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transform: rotate(calc(30deg * var(--i)));
+    font-weight: bolder;
+    font-size: 1em;
+    text-shadow: 5px 2px 5px black ;
+}
+
+.clock .body .number:nth-child(14){
+    transform: none;
+    top: 5%;
+    left: -22%;
+    font-size: 0.93em;
+}
+
+.clock .body .number:nth-child(13){
+    transform: none;
+    top: 22%;
+    left: -37%;
+    font-size: 0.93em;
+}
+
+.clock .body .number:nth-child(12){
+    transform: none;
+    top: 40%;
+    left: -45%;
+}
+
+.clock .body .number:nth-child(11){
+    transform: none;
+    bottom: 28%;
+    right: 38%;
+}
+
+.clock .body .number:nth-child(10){
+    transform: none;
+    bottom: 12%;
+    right: 22%;
+}
+
+.clock .body .number:nth-child(9){
+    transform: none;
+    bottom: 7%;
+}
+.clock .body .number:nth-child(8){
+    transform: none;
+    bottom: 12%;
+    right: -22%;
+}
+
+.clock .body .number:nth-child(7){
+    transform: none;
+    bottom: 28%;
+    right: -38%;
+}
+.clock .body .number:nth-child(6){
+    transform: none;
+    top: 40%;
+    left: 45%;
+}
+
+.clock .body .number:nth-child(5){
+    transform: none;
+    top: 20%;
+    left: 38%;
+}
+
+.clock .body .number:nth-child(4){
+    transform: none;
+    top: 5%;
+    left: 22%;
+}
+
+/* stopwatch styling */
+
+.stopwatch{
+    background-color: cornflowerblue;
+    grid-area: five;
+    color: aliceblue;
+}
+
+.stop_timer{
+    width: 20%;
+    margin: 2rem auto;
+    display: flex;
+}
+
+.stop_timer p{
+    font-size: 1.5rem;
+}
+
+.stop_btn{
+    width: 20%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.stop_btn button{
+    padding: 0.2rem 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    border: 1px solid aliceblue;
+    color: cornflowerblue;
+}
+
+.stop_btn button:hover{
+    background-color: transparent;
+    color: aliceblue;
+    border: 1px solid aliceblue;
+}
+
+/* countdown styling */
+
+.countdown{
+    background-color: plum;
+    grid-area: six;
+}
+
+.countdown input{
+    background: transparent;
+    outline: none;
+    border: none;
+    color: aliceblue;
+    border-right: 1px solid aliceblue;
+}
+
+.countdown .countdown_contain{
+    display: flex;
+    width: 40%;
+    text-align: center;
+    margin: 2rem auto;
+    justify-content: space-around;
+    color: aliceblue;
+}
+
+.countdown .controls{
+    width: 20%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.countdown .controls button{
+    padding: 0.2rem 0.8rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    color: plum;
+    border: 1px solid aliceblue;
+}
+
+.countdown .controls button:hover{
+    background-color: transparent;
+    color: aliceblue;
+    border: 1px solid aliceblue;
+}
+
+@media (max-width: 768px) {
+    body{
+        font-size: 20px;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        'one'
+        'four'
+        'two'
+        'five'
+        'three'
+        'six';
+    }
+
+    .name{
+        border-right: none;
+    }
+    .stop_btn{
+        width: 30%;
+        justify-content: space-between;
+    }
+    .countdown .controls{
+        width: 30%;
+    }
+}
+
+@media (max-width: 450px) {
+    .clk{
+        padding-top: 1rem;
+    }
+    .clock{
+        padding: 2rem 0;
+    }
+    .clock .body{
+        height: 150px;
+        width: 150px;
+    }
+    .stop_timer{
+        width: 40%;
+        margin: 0 auto 2rem;
+    }
+    .stop_btn{
+        width: 50%;
+        justify-content: space-between;
+    }
+    .stop_btn button{
+        padding: 0.2rem 0.6rem;
+    }
+    .stp{
+        padding-top: 1rem;
+    }
+    .stopwatch{
+        padding: 2rem 0;
+    }
+
+    .ctd{
+        padding-top: 1rem;
+    }
+    .countdown .countdown_contain{
+        width: 70%;
+        justify-content: space-between;
+    }
+    .countdown .controls{
+        width: 60%;
+        margin: 0 auto 2rem;
+    }
+}
